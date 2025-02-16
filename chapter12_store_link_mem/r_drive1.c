@@ -1,15 +1,20 @@
 #include<stdio.h>
-#include<time.h>
-
-extern int rand1(void);
-extern void srand1(unsigned seed);
+extern unsigned int rand1(void);
+extern unsigned int srand1(unsigned seed);
 
 int main(void){
 	int count;
-	puts("Please input your num:");
-	srand1((unsigned)time(0));
-	for(count = 0;count < 5;count++){
-		printf("%d\n",rand1());
+	int choice;
+	puts("Please enter your choice(q to quit):");
+	while(scanf("%d",&choice)){
+		srand1(choice);
+		for(count = 0;count < 5;count++){
+			printf("The random number is :%d\n",rand1());
+		
+		}
+	
+		puts("Please enter your choice(q to quit):");
 	}
-	return 0;
+
+
 }

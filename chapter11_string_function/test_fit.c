@@ -1,17 +1,19 @@
 #include<stdio.h>
 #include<string.h>
-void fit(char *string,unsigned n);
+
+void fit(char *str,int size);
 
 int main(void){
-	char str[] = "This is astring,and i love fangjianhuajiejie!";
-	puts(str);
-	fit(str,10);
-	printf("\n");
-	puts(str);
-	puts(str + 11);
+	char mesg[] = "Things should be as simple as possible," "but not simpler.";
+	puts(mesg);
+	fit(mesg,38);
+	puts(mesg);
+	puts("Let's look at some more of the string.");
+	puts(mesg + 39);
 	return 0;
 }
-void fit(char *string,unsigned n){
-	if(strlen(string) > n)
-		string[n] = '\0';
+
+void fit(char *str,int size){
+	if(strlen(str) > size)
+		str[size] = '\0';
 }

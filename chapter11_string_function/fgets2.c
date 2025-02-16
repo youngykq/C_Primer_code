@@ -1,11 +1,13 @@
 #include<stdio.h>
-#define LEN 10
+#define STLEN 10
 
 int main(void){
-	char str[LEN];
-	printf("Please input your string:");
-	while((fgets(str,LEN,stdin)) != NULL && str[0] != '\n'){
-		fputs(str,stdout);
+	char words[STLEN];
+	puts("Enter a string.");
+	while(fgets(words,STLEN,stdin) != NULL && words[0] != '\n'){
+		fputs(words,stdout);
 	}
+	puts("Done!");
+
 	return 0;
 }

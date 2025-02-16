@@ -1,23 +1,23 @@
 #include<stdio.h>
-#define LEN 10
+#define STLEN 10
 
 int main(void){
-	char str[LEN];
+	char words[STLEN];
 	int i;
-	printf("Please input your string:");
-	while((fgets(str,LEN,stdin) != NULL && str[0] != '\n')){
+	puts("Enter a string(empty line to quit):");
+	while(fgets(words,STLEN,stdin) != NULL && words[0] != '\n'){
 		i = 0;
-		while(str[i] != '\n' && str[i] != '\0'){
+		while(words[i] != '\0' &&  words[i] != '\n')
 			i++;
-		}
-		if(str[i] == '\n')
-			str[i] = '\0';
+		if(words[i] == '\n')
+			words[i] = '\0';
 		else
-			while(getchar() != '\n'){
-				continue;
-			}
-		fputs(str,stdout);
+			while(getchar() != '\n')
+			       continue;	
+		//fputs(words,stdout);
+		puts(words);
 	}
+	puts("Done!");
 
 	return 0;
 }

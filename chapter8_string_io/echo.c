@@ -2,10 +2,8 @@
 
 int main(void){
 	char ch;
-	while((ch = getchar())
-			!= '#'){
-		 putchar(ch);
+	while((ch = getchar()) != '\n'){
+		putchar(ch);
 	}
-	printf("\n");
 	return 0;
 }

@@ -2,33 +2,31 @@
 #include<stdlib.h>
 
 int main(void){
+	double*ptr;
 	int max;
-	int number;
 	int i = 0;
-	puts("What is the max number of the entries:");
-	if(!scanf("%d",&max)){
-		puts("The wrong input!");
-		exit(EXIT_FAILURE);	
-	}
-	double *ptd = (double *)malloc(max * sizeof(double));
-	if(ptd == NULL){
-		puts("Menory allocation failed!");
+	puts("Enter the max count of array:");
+	if(scanf("%d",&max) != 1){
+		puts("Entered error");
 		exit(EXIT_FAILURE);
 	}
-	puts("Please input the value (q to quit):");
-	while(i < max && (scanf("%lf",&ptd[i]) == 1))
-		i++;
-	printf("Here are the %d value which you has inputed:",number = i);
-	for(int j = 0;j < number;j++){
-		printf("%7.2f",ptd[j]);
-		if(j % 7 == 6)
-			putchar('\n');
+	ptr = (double*)malloc(max * sizeof(double));
+	if(ptr == NULL){
+		puts("Failed to allocate the memory scope.");
+		exit(EXIT_FAILURE);
 	}
-	if(i % 7 != 0)
-		putchar('\n');
-	puts("Done.");	
-	free(ptd);
+	puts("Now enter the elements of the array:");
+	while(i < max && scanf("%lf",&ptr[i]) == 1 ){
+		i++;
+	}
 
+	puts("Here are the elements of array:");
+	for(int j = 0;j < max;j++){
+		printf("%lf\n",ptr[j]);
+	}
+
+	puts("Done!");
+	free(ptr);
 
 	return 0;
 }

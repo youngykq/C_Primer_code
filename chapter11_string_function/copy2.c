@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<string.h>
+#define SIZE 40
+#define WORDS "breat"
+
+int main(void){
+	const char* orig = WORDS;
+	char copy[SIZE] = "This is beat now!";
+	char* ps;
+	puts(orig);
+	puts(copy);
+	ps = strcpy(copy + 8,orig);
+	puts(copy);
+	puts(ps);
+	return 0;
+}

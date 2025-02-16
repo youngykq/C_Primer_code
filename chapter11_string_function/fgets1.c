@@ -1,20 +1,18 @@
 #include<stdio.h>
-#define LEN 16
+#define STLEN 14
 
 int main(void){
-	char str[LEN];
-	puts("Please input your string:");
-	fgets(str,LEN,stdin);
-	printf("Here are your teice string:\n");
-	fputs(str,stdout);
-	puts(str);
-	puts("Done!");
-
-	printf("Input your string again:\n");
-	fgets(str,LEN,stdin);
-	puts(str);
-	fputs(str,stdout);
-	puts("Done again!");
-
+	char words[STLEN];
+	puts("Enter a string,please.");
+	fgets(words,STLEN,stdin);
+	printf("Your string twice(puts(),then fputs()):\n");
+	puts(words);
+	fputs(words,stdout);	
+	puts("Enter another string,please.");
+	fgets(words,STLEN,stdin);
+	printf("Your string twice(puts(),then fputs()):\n");
+	puts(words);
+	fputs(words,stdout);
+	puts("Done.");
 	return 0;
 }

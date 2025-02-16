@@ -1,6 +1,6 @@
-unsigned long next = 1;
+static unsigned long next = 1;
 
-unsigned rand0(void){
-	next = next * 1103535245  + 12345;
-	return (unsigned)(next >> 16) % 32768;
+unsigned int rand0(void){
+	next = next * 1103515245 + 12345;
+	return (unsigned int)(next / 65536) % 32768;
 }
